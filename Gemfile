@@ -12,10 +12,10 @@ gem 'dynamic_form'
 group :development, :test do
   gem 'ruby-debug19'
   gem 'pickler'
+  gem 'rspec-rails'
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'factory_girl'
   
   gem 'cucumber-rails'

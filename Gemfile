@@ -11,6 +11,7 @@ gem 'dynamic_form'
 
 group :development, :test do
   gem 'ruby-debug19'
+  gem 'pickler'
 end
 
 group :test do

@@ -1,18 +1,33 @@
+- content_for(:title, "Create a New Creative")
+- content_for(:subnav) do
+  %a View All
+  %a.selected Create New
+%p A <em>Creative</em> consists of the copy and image required to display a single ad.
+
 = form_for creative, :html => { :multipart => true } do |f|
-  = f.label :title
-  %small= f.error_message_on :title
-  = f.text_field :title
+  
+  %fieldset
+    %legend Creative Information
+    .required.field
+      = f.label :title
+      %small= f.error_message_on :title
+      = f.text_field :title
+      .error_message "are you sure?"
 
-  = f.label :body
-  %small= f.error_message_on :body
-  = f.text_field :body
+    .required.field
+      = f.label :body
+      %small= f.error_message_on :body
+      = f.text_field :body
 
-  = f.label :link_url, 'Link'
-  %small= f.error_message_on :link_url
-  = f.text_field :link_url
+    .required.field
+      = f.label :link_url, 'Link'
+      %small= f.error_message_on :link_url
+      = f.text_field :link_url
+      .error_message "are you sure?"
 
-  = f.label :image
-  %small= f.error_message_on :image
-  = f.file_field :image
+    .required.field
+      = f.label :image
+      %small= f.error_message_on :image
+      = f.file_field :image
 
   = f.submit

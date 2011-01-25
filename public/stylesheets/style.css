@@ -1,0 +1,439 @@
+/**************************************************
+ **** COMMON, BASELINE CSS FOR ALL MOBILE SITES
+ *************************************************/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+	margin: 0px;
+	padding: 0px;
+}
+
+*, ::after, ::before {
+	-webkit-box-sizing: border-box;
+	-webkit-text-size-adjust: none;
+	-webkit-user-select: none;
+}
+
+body {
+	margin: auto;
+	width: 60em;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica-Neue, Helvetica, 'BBAlpha Sans', sans-serif;
+	position: relative;
+	display: block;
+	background-color: #EEE;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+ul, ol {
+	margin-left: 2em;
+	margin-bottom: 1em;
+}
+
+h1 {
+	background-color: white;
+	padding: .5em;
+	text-shadow: white 0px 1px 1px;
+}
+/*
+
+h1 {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDD), to(#AAA));
+	font-size: 125%;
+	padding: .6em .5em;
+	border-bottom: solid 1px #666;
+	height: 2.5em;
+}
+*/
+
+h2 {
+	font-size: 115%;
+	margin-bottom: .3em;
+}
+
+div#content {
+	background-color: white;
+	padding: 0em 1em 1em 1em;
+	border-bottom-right-radius: 0.6em 0.6em;
+	border-bottom-left-radius: 0.6em .6em;
+}
+
+/**************************************************
+ **** FORMS, FIELDS and ALL THAT STUFF
+ *************************************************/
+form {
+	display: block;
+	width: 40em;
+}
+
+/***** Fieldsets - for containing "sets" of "fields"... *****/
+fieldset {
+	margin: 1em 0px 1.5em 0px;
+	position: relative;
+	border: 1px solid #DDD;
+	border: 0px;
+	-webkit-box-shadow: rgba(255, 255, 255, 0.699219) 0px 1px 0px;
+	border-bottom-left-radius: 0.4em 0.4em;
+	border-bottom-right-radius: 0.4em 0.4em;
+	border-top-left-radius: 0.4em 0.4em;
+	border-top-right-radius: 0.4em 0.4em;
+	overflow: hidden;
+	padding: 0px;
+}
+
+fieldset legend {
+	color: #333;
+	font-weight: bold;
+	padding: 0em .7em 0.6em .6em;
+	text-shadow: white 0px 1px 1px;
+	border: 0px;
+}
+
+h1 + fieldset,	h1 + fieldset legend,
+p + fieldset,	p + fieldset legend {
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+fieldset > .field:first-child, fieldset > legend + .field {
+	border-top: 1px solid #DDD;
+	border-top-right-radius: 0.4em 0.4em;
+	border-top-left-radius: 0.4em 0.4em;
+}
+
+fieldset > .field:first-child > label:first-child, fieldset > legend + .field > label:first-child {
+	border-top-left-radius: 0.4em 0.4em;
+}
+
+fieldset > .field:first-child > input:last-child,			fieldset > legend + .field > input:last-child,
+fieldset > .field:first-child > select:last-child,			fieldset > legend + .field > select:last-child,
+fieldset > .field:first-child > .toggle,					fieldset > legend + .field > .toggle,
+fieldset > .field:first-child > .toggle > label,			fieldset > legend + .field > .toggle > label,
+fieldset > .field:first-child > .error_message:last-child,	fieldset > legend + .field > .error_message:last-child {
+	border-top-right-radius: 0.4em 0.4em;
+}
+
+fieldset > .field:last-child {
+	border-bottom-right-radius: 0.4em 0.4em;
+	border-bottom-left-radius: 0.4em 0.4em;
+}
+
+fieldset > .field:last-child > label:first-child {
+	border-bottom-left-radius: 0.4em 0.4em;
+}
+
+fieldset > .field:last-child > input:last-child,
+fieldset > .field:last-child > select:last-child,
+fieldset > .field:last-child > .radio-group,
+fieldset > .field:last-child > .toggle ,
+fieldset > .field:last-child > .error_message {
+	border-bottom-right-radius: 0.4em 0.4em;
+}
+
+/***** The field (and related) class(es), which we wrap around label/input pairs *****/
+.field {
+	-webkit-box-align: stretch;
+	-webkit-box-orient: horizontal;
+	display: -webkit-box;
+	border-bottom: 1px solid #DDD;
+	border-left: 1px solid #DDD;
+	border-right: 1px solid #DDD;
+	min-height: 2.5em;
+	overflow: hidden;
+	position: relative;
+}
+
+.field label {
+	width: 8em;
+	text-align: left;
+	background-color: #F7F7F7;
+	border-top: 1px solid white;
+	color: #333;
+	display: block;
+	padding: 0.8em;
+	text-shadow: rgba(255, 255, 255, 0.246094) 0px 0.08em 0px;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.field .error_message {
+	width: 12em;
+	text-align: left;
+	background-color: #F9D9D8;
+	display: block;
+	padding: 0.8em;
+	text-shadow: rgba(255, 255, 255, 0.246094) 0px 0.08em 0px;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.required > label::after {
+	content: '*';
+	display: inline;
+}
+
+.field input {
+	padding: 0.4em;
+	border: 0px;
+	-webkit-box-flex: 1;
+	-webkit-user-select: text;
+	display: block;
+	position: relative;
+	width: 100%;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	background: white none;
+	cursor: auto;
+}
+
+.field input[type="text"] {
+	border: 2px inset;
+}
+
+.field select {
+	background-image: url('../images/red-x.gif');
+	background-position: right;
+	background-repeat: no-repeat;
+	border: 0px;
+	margin: 0px;
+	padding: 0.4em;
+	-webkit-appearance: none;
+	display: block;
+	min-height: 2.5em;
+	width: 100%;
+	-webkit-box-flex: 1;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.field .toggle {
+	background-color: white;
+	background-image: url('../images/red-x.gif');
+	background-position: center right;
+	background-repeat: no-repeat;
+}
+
+.radio-group {
+	background-color: white;
+	padding: 0.6em;
+	border-top-right-radius: 0.4em 0.4em;
+	border: 0px;
+	padding: .65em .4em;
+	-webkit-appearance: none;
+	display: block;
+	min-height: 2.5em;
+	width: 100%;
+	-webkit-box-flex: 1;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+/***** Styling radio buttons *****/
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"]+label {
+	background-color: #FFC;
+	display: inline;
+}
+
+input[type="radio"]:checked+label {
+	font-weight: bold;
+	background-color: black;
+	color: white;
+}
+
+/***** Checkboxes + "toggles" (which are really just textboxes) *****/
+/** Note - I (Yair) think this implementation is dirty.  It will likely change. **/
+input[type="checkbox"]+label {
+	background-color: #FFC;
+	display: block;
+}
+
+input[type="checkbox"]:checked+label {
+	font-weight: bold;
+	background-color: black;
+	color: white;
+}
+
+.toggle input[type="checkbox"] {
+	display: none;
+}
+
+.toggle input[type="checkbox"]+label {
+	background-color: white;
+	background-image: url('../images/red-x.gif');
+	background-position: center right;
+	background-repeat: no-repeat;
+}
+
+.toggle input[type="checkbox"]:checked+label {
+	background-image: url('../images/blue-x.jpg');
+}
+
+/***** Submit / Regular Buttons *****/
+input[type="submit"] {
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0px 1px 2px #030;
+	background-color: #393;
+	background-image: -webkit-gradient(linear, 0% 0, 0% 100%, from(#3b3), to(#070));
+	padding: 8px 16px;
+	border-radius: 5px;
+	border: solid 1px #050;
+	display: inline-block;
+	font-size: 16px;
+}
+
+input[type="submit"]:hover {
+	text-shadow: 0 1px 2px #050;
+	background-color: #5B5;
+	background-image: -webkit-gradient(linear, 0% 0, 0% 100%, from(#4c4), to(#090));
+	border: solid 1px #070;
+	cursor: pointer;
+}
+
+input[type="submit"]:active {
+	text-shadow: 0 1px 2px #010;
+	background-color: #171;
+	background-image: -webkit-gradient(linear, 0% 0, 0% 100%, from(#191), to(#050));
+	border: solid 1px #030;
+}
+
+/**************************************************
+ **** PRIMARY and SECONDARY NAVIGATIONs
+ *************************************************/
+/***** Primary nav *****/
+#navigation-container {
+	padding: .4em .5em;
+	width: 100%;
+	height: 2em;
+	background-color: black;
+	color: white;
+}
+
+#navigation {
+	float: right;
+}
+
+#navigation a {
+	display: block;
+	float: left;
+	height: 100%;
+	background-color: black;
+	color: white;
+	font-size: smaller;
+	padding: .25em 1em;
+	text-align: center;
+	border-left: solid 1px #999;
+	text-decoration: none;
+}
+
+#navigation a:hover {
+	color: black;
+	background-color: white;
+}
+
+#navigation a:first-child {
+	border-left: 0px;
+}
+
+#navigation a.selected {
+	color: #CCCCCC;
+	background-color: #333333;
+}
+
+/***** Action button - for pages that have one primary activity possible on the page, typically "add" or "edit" the data record displayed on the current page *****/
+.page-action-button {
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	z-index: 12;
+	padding: 4px 6px;
+}
+
+.page-action-button img {
+	height: 24px;
+}
+
+/***** Secondary Navigation *****/
+#subnav-container {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDD), to(#AAA));
+	padding: .5em;
+	background-color: #1187af;
+}
+
+#subnav + #content {
+	padding-top: 1em;
+}
+
+#subnav {
+	float: right;
+}
+
+#subnav a {
+	float: left;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: .1em .5em;
+	margin: .65em 1em;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #4B89E7;
+}
+
+#subnav a.selected {
+	background-color: #3333CC;
+}
+
+/**************************************************
+ **** FOOTER
+ *************************************************/
+#footer {
+	text-align: center;
+	font-size: 75%;
+	color: #666;
+	margin: 1em auto;
+	width: 100%;
+}
+
+/**************************************************
+ **** PARED DOWN LOKESH LIGHTBOX
+ *************************************************/
+.lightbox-background {
+	display: none;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.7;
+	opacity:.70;
+	filter: alpha(opacity=70);
+}
+
+.lightbox-content {
+	text-align: center;
+	display: none;
+	position: fixed;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	padding: 16px;
+	border: 5px solid orange;
+	background-color: white;
+	z-index:1002;
+	overflow: auto;
+}

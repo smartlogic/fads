@@ -1,11 +1,35 @@
 !!!
 %html
   %head
-    %title Fads
+    %title= "#{yield :title} | FADS"
     = stylesheet_link_tag :all
     = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    #navigation-container
+      Signed in as <em>yflicker</em>
+      #navigation
+        %a{ :href => "#" } Dashboard
+        %a Campaigns
+        %a Creative Library
+        %a Account
+        %a Logout
+    #subnav-container
+      %a{ :href => "./" }
+        %img{ :src => "http://www.smartlogicsolutions.com/images/logo.png", :height => 39, :width => 253, :alt => "FADS Logo" }
+      #subnav= yield :subnav
+    %h1= yield :title
+    -if notice
+      .notice= notice
+    -if alert
+      .alert= alert
+    #content
+      = yield
+    #footer
+      &copy; 2011 AppDispensary, LLC. All rights reserved. Terms and conditions, features, support, pricing and service options subject to change without notice. |
+      %a{ :href => "#"} Terms
+      |
+      %a{ :href => "#"} Privacy
+      |
+      %a{ :href => "#"} Policy
+      |

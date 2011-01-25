@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110125161849) do
+ActiveRecord::Schema.define(:version => 20110125211103) do
+
+  create_table "campaigns", :force => true do |t|
+    t.integer  "campaign_id"
+    t.integer  "account_id"
+    t.string   "name",            :limit => 100
+    t.datetime "time_start"
+    t.datetime "time_stop"
+    t.integer  "daily_budget"
+    t.integer  "campaign_status"
+    t.integer  "lifetime_budget"
+  end
 
   create_table "creatives", :force => true do |t|
     t.string   "name"

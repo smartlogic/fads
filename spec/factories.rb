@@ -14,3 +14,10 @@ end
 
 Factory.define :creative, :parent => :valid_creative do |f|
 end
+
+Factory.define :valid_campaign, :class => Campaign do |f|
+  f.sequence(:name) {|n| "Campaign ##{n}"}
+end
+
+Factory.define :campaign, :parent => :valid_campaign do |f|
+end

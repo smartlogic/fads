@@ -3,7 +3,7 @@ Fads::Application.routes.draw do
 
   root :to => 'home#index'
 
-  resources :ads
+  resources :creatives
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

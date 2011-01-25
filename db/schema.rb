@@ -12,10 +12,15 @@
 
 ActiveRecord::Schema.define(:version => 20110124213837) do
 
-  create_table "ads", :force => true do |t|
+  create_table "creatives", :force => true do |t|
     t.string   "title"
     t.string   "body"
     t.string   "image"
+    t.integer  "creative_id"
+    t.string   "link_url"
+    t.string   "iupreview_url"
+    t.string   "ad_type"
+    t.integer  "related_object_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

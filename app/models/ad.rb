@@ -1,3 +1,3 @@
-class Ad < ActiveRecord::Base
+class Creative < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 end

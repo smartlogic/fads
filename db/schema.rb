@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110124213837) do
+ActiveRecord::Schema.define(:version => 20110125161849) do
 
   create_table "creatives", :force => true do |t|
     t.string   "title"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(:version => 20110124213837) do
     t.string   "iupreview_url"
     t.string   "ad_type"
     t.integer  "related_object_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "target_groups", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -4,6 +4,7 @@ Fads::Application.routes.draw do
   root :to => 'home#index'
 
   resources :creatives
+  resources :target_groups, :only => [:new, :create, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

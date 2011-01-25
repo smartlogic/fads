@@ -1,6 +1,7 @@
 class CreateCreatives < ActiveRecord::Migration
   def self.up
     create_table :creatives do |t|
+      t.string :name
       t.string :title
       t.string :body
       t.string :image

@@ -1,4 +1,7 @@
 class CreativesController < ApplicationController
+
+  before_filter :authenticate_user!
+
   expose :creative
 
   def create

@@ -5,6 +5,18 @@ describe Creative, "newly created" do
 
   it {should be_valid}
 
+  context "with a duplicate name" do
+    before {Factory(:valid_creative, :name => subject.name)}
+
+    it {should_not be_valid}
+  end
+  
+  context "without a name" do
+    before {subject.name = nil}
+
+    it {should_not be_valid}
+  end
+
   context "without a title" do
     before {subject.title = nil}
 

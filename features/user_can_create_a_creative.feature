@@ -12,6 +12,7 @@ Feature: User can create a creative
   Scenario: User creates a creative
     Given I am on the home page
     And   I follow "Create a new creative"
+    And   I fill in "Name" with "My Creative"
     And   I fill in "Title" with "Test title"
     And   I fill in "Body" with "Test body"
     And   I fill in "Link" with "http://www.smartlogicsolutions.com"

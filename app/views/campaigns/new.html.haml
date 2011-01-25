@@ -1,0 +1,6 @@
+= form_for campaign do |f|
+  = f.label :name
+  %small= f.error_message_on :name
+  = f.text_field :name
+
+  = f.submit

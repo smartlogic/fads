@@ -1,10 +1,13 @@
 Fads::Application.routes.draw do
   devise_for :users
 
-  root :to => 'home#index'
+  match '/dashboard' => 'campaigns#index'
 
+  resources :campaigns, :only => [:index, :new, :create, :show]
   resources :creatives
   resources :target_groups, :only => [:new, :create, :show]
+
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

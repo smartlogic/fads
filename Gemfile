@@ -26,7 +26,5 @@ group :test do
 
   gem 'ZenTest'
   gem 'autotest-rails'
-  if RUBY_PLATFORM =~ /darwin/
-    gem 'autotest-growl'
-  end
+  gem 'autotest-growl'
 end

@@ -1,11 +1,14 @@
 = form_for creative, :html => { :multipart => true } do |f|
   = f.label :title
+  %small= f.error_message_on :title
   = f.text_field :title
 
   = f.label :body
+  %small= f.error_message_on :body
   = f.text_field :body
 
   = f.label :image
+  %small= f.error_message_on :image
   = f.file_field :image
 
   = f.submit

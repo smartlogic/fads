@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(:version => 20110125161849) do
 
   create_table "creatives", :force => true do |t|
+    t.string   "name"
     t.string   "title"
     t.string   "body"
     t.string   "image"

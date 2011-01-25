@@ -14,6 +14,7 @@ Feature: User can create a creative
     And   I follow "Create a new creative"
     And   I fill in "Title" with "Test title"
     And   I fill in "Body" with "Test body"
+    And   I fill in "Link" with "http://www.smartlogicsolutions.com"
     And   I attach the fixture file "sample_image.png" to "Image"
     And   I press "Create Creative"
     Then  I should see "Creative successfully created"

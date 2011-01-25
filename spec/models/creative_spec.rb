@@ -29,6 +29,12 @@ describe Creative, "newly created" do
     it {should_not be_valid}
   end
 
+  context "without a link url" do
+    before {subject.link_url = nil}
+
+    it {should_not be_valid}
+  end
+
   context "with a body longer than 135 characters" do
     before do
       3.times do

@@ -9,11 +9,12 @@ Feature: User cannot create creative outside facebook text limits/requirements
     And   I am on the home page
     And   I follow "Create a new creative"
 
-  Scenario: Creating a creative with no title or body
+  Scenario: Creating a creative with no title, body, image, or link
     When  I press "Create Creative"
     Then  I should see "Title can't be blank"
     And   I should see "Body can't be blank"
     And   I should see "Image can't be blank"
+    And   I should see "Link can't be blank"
 
   Scenario: Creating a creative with title and body longer than limits
     When  I fill in "Title" with "This is a title that is much to long for Mark Z at facebook"

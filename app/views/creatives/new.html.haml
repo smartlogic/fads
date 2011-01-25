@@ -7,6 +7,10 @@
   %small= f.error_message_on :body
   = f.text_field :body
 
+  = f.label :link_url, 'Link'
+  %small= f.error_message_on :link_url
+  = f.text_field :link_url
+
   = f.label :image
   %small= f.error_message_on :image
   = f.file_field :image

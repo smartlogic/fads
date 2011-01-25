@@ -7,13 +7,18 @@
     = csrf_meta_tag
   %body
     #navigation-container
-      Signed in as <em>yflicker</em>
+      <strong>Current client:</strong>
+      %select
+        %option ExxonMobil
+        %option JP Morgan Chase
+        %option Create New...
       #navigation
-        %a{ :href => "#" } Dashboard
-        %a Campaigns
-        %a Creative Library
-        %a Account
-        %a Logout
+        %a{ :href => "/" } Dashboard
+        %a{ :href => "/campaigns" } Campaigns
+        %a{ :href => "/creatives" } Creatives
+        %a{ :href => "/target_groups" } Target Groups
+        %a{ :href => "/profile" } Account (<em>yflicker</em>)
+        %a{ :href => "/logout" } Logout
     #subnav-container
       %a{ :href => "./" }
         %img{ :src => "http://www.smartlogicsolutions.com/images/logo.png", :height => 39, :width => 253, :alt => "FADS Logo" }
@@ -26,7 +31,7 @@
     #content
       = yield
     #footer
-      &copy; 2011 AppDispensary, LLC. All rights reserved. Terms and conditions, features, support, pricing and service options subject to change without notice. |
+      &copy; 2011 FADS, LLC. All rights reserved. Terms and conditions, features, support, pricing and service options subject to change without notice. |
       %a{ :href => "#"} Terms
       |
       %a{ :href => "#"} Privacy

@@ -368,7 +368,7 @@ input[type="submit"]:active {
 /***** Secondary Navigation *****/
 #subnav-container {
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDD), to(#AAA));
-	padding: .5em;
+	padding: .5em 1em .5em .5em;
 	background-color: #1187af;
 }
 
@@ -381,15 +381,28 @@ input[type="submit"]:active {
 }
 
 #subnav a {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0.148438)), to(rgba(0, 0, 0, 0.496094)));
 	float: left;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	padding: .1em .5em;
-	margin: .65em 1em;
+	padding: .5em;
+	margin: .2em 0px;
 	color: white;
 	font-weight: bold;
 	text-decoration: none;
 	background-color: #4B89E7;
+}
+
+#subnav a:hover {
+	background-color: #0CF;
+}
+
+#subnav a:first-child {
+	border-top-left-radius: 0.4em 0.4em;
+	border-bottom-left-radius: 0.4em 0.4em;
+}
+
+#subnav a:last-child {
+	border-bottom-right-radius: 0.4em 0.4em;
+	border-top-right-radius: 0.4em 0.4em;
 }
 
 #subnav a.selected {

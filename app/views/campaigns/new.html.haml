@@ -1,6 +1,16 @@
+- content_for(:title, "Create a New Campaign")
+- content_for(:subnav) do
+  %a{ :href => "/campaigns" } View All
+  %a.selected Create New
+  %a{ :href => "#" } Foo Bar
+%p A <em>Campaign</em> is a set of Facebook ads that endeavor to achieve a stated goal e.g. (increase email newsletter signups).
+
 = form_for campaign do |f|
-  = f.label :name
-  %small= f.error_message_on :name
-  = f.text_field :name
+  %fieldset
+    %legend Campaign Information
+    .required.field
+      = f.label :name
+      %small= f.error_message_on :name
+      = f.text_field :name
 
   = f.submit

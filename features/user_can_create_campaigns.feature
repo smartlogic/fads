@@ -18,3 +18,9 @@ Feature: User can create campaigns
     Given I follow "Create Campaign"
     When  I press "Create Campaign" 
     Then  I should see "Name can't be blank"
+
+  Scenario: Viewing my campaigns
+    Given I have a campaign: 
+      | name | My Campaign |
+    And   I follow "Campaigns"
+    Then  I should see "My Campaign"

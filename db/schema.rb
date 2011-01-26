@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(:version => 20110125211103) do
     t.integer  "daily_budget"
     t.integer  "campaign_status"
     t.integer  "lifetime_budget"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "creatives", :force => true do |t|

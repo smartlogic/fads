@@ -9,6 +9,9 @@ class CreateCampaignsTable < ActiveRecord::Migration
       t.integer :daily_budget
       t.integer :campaign_status
       t.integer :lifetime_budget
+      t.references :agency
+
+      t.timestamps
     end
   end
 

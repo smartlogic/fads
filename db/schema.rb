@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110125211103) do
+ActiveRecord::Schema.define(:version => 20110126191831) do
+
+  create_table "agencies", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "campaigns", :force => true do |t|
     t.integer  "campaign_id"
@@ -21,6 +27,9 @@ ActiveRecord::Schema.define(:version => 20110125211103) do
     t.integer  "daily_budget"
     t.integer  "campaign_status"
     t.integer  "lifetime_budget"
+    t.integer  "agency_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "creatives", :force => true do |t|
@@ -55,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20110125211103) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "agency_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

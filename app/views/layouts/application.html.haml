@@ -18,7 +18,10 @@
         %a{ :href => "/creatives" } Creatives
         %a{ :href => "/target_groups" } Target Groups
         %a{ :href => "/profile" } Account (<em>yflicker</em>)
-        %a{ :href => "/logout" } Logout
+        - if user_signed_in?
+          %a= link_to 'Logout', destroy_user_session_path
+        - else
+          %a= link_to 'Login', new_user_session_path
     #subnav-container
       %a{ :href => "./" }
         %img{ :src => "http://www.smartlogicsolutions.com/images/logo.png", :height => 39, :width => 253, :alt => "FADS Logo" }

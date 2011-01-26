@@ -3,7 +3,6 @@ Feature: User can only view campaigns for their agency
   As a customer
   I want to view the campaigns for my agency
 
-  @wip
   Scenario:
     Given I am logged in
     And   my agency has the campaign named "My Awesome Campaign"

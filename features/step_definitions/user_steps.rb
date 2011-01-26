@@ -15,7 +15,7 @@ Given /^I am logged in$/ do
   @user ||= Factory(:user)
   steps %Q{
     Given I am on the homepage
-    And   I follow "Sign In"
+    And   I follow "Login"
     And   I fill in "Email" with "#{@user.email}"
     And   I fill in "Password" with "#{@user.password}"
     And   I press "Sign in"

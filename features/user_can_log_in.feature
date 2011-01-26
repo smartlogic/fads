@@ -10,7 +10,7 @@ Feature: User can log in
       | password              | password        |
       | password_confirmation | password        |
     Given I am on the homepage
-    And   I follow "Sign In"
+    And   I follow "Login"
     And   I fill in "Email" with "test@slsdev.net"
     And   I fill in "Password" with "password"
     And   I press "Sign in"

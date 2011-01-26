@@ -6,7 +6,8 @@ Feature: User can register an account
 
   Scenario: User registers an account
     Given I am on the home page
-    And   I follow "Register"
+    And   I follow "Login"
+    And   I follow "Sign up"
     When  I fill in "Email" with "test@slsdev.net"
     And   I fill in "Password" with "password"
     And   I fill in "Password confirmation" with "password"

@@ -8,8 +8,15 @@ Feature: User can create a client
     Given I am logged in
     And   I am on my dashboard
 
+  @wip
   Scenario: Creating a new client
     When I select "New Client" from "Current client"
     And  I fill in "Name" with "XOM"
     And  I press "Create client"
+    Then I should see "Client successfully created"
+
+  Scenario: Creating a new client
+    Given I am on the new client page
+    And  I fill in "Name" with "XOM"
+    And  I press "Create Client"
     Then I should see "Client successfully created"

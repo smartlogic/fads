@@ -6,6 +6,7 @@ Fads::Application.routes.draw do
   resources :campaigns, :only => [:index, :new, :create, :show]
   resources :creatives
   resources :target_groups, :only => [:new, :create, :show]
+  resources :clients, :only => [:new, :create]
 
   root :to => 'home#index'
 

@@ -14,3 +14,14 @@ Feature: User can view creatives
     Then  I should see "My Creatives"
     And   I should see "You have not uploaded any creatives"
     And   the "View All" subnav should be selected
+
+  Scenario: User has 2 creatives
+    Given I have a creative:
+      | name      | My super unique name           |
+    And   I have a creative:
+      | name      | My other unique name           |
+    And   I follow "Creatives"
+    Then  I should see "My Creatives"
+    And   the "View All" subnav should be selected
+    And   I should see "My super unique name"
+    And   I should see "My other unique name"

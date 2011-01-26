@@ -5,19 +5,19 @@
 %p A list of all <em>Creatives</em> available for use in your campaigns.
 
 - if !creatives.empty?
-  %table
+  %table{ :id => "creatives_table" }
     %tr
       %th Name
       %th Title
       %th Body
       %th Landing Page
       %th Image
-  - creatives.each do |creative|
-    %tr
-      %td= creative.name
-      %td= creative.title
-      %td= creative.body
-      %th= creative.link_url
-      %th= creative.image
+    - creatives.each do |creative|
+      %tr
+        %td= creative.name
+        %td= creative.title
+        %td= creative.body
+        %td= creative.link_url
+        %td= image_tag creative.image.url
 - else
   %p You have not uploaded any creatives.

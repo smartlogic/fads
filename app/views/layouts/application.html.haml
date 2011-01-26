@@ -16,7 +16,6 @@
         %a{ :href => "/" } Dashboard
         %a{ :href => "/campaigns" } Campaigns
         %a{ :href => "/creatives" } Creatives
-        %a{ :href => "/target_groups" } Target Groups
         %a{ :href => "/profile" } Account (<em>yflicker</em>)
         - if user_signed_in?
           %a= link_to 'Logout', destroy_user_session_path

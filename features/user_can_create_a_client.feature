@@ -6,8 +6,8 @@ Feature: User can create a client
 
   Background: 
     Given I am logged in
-    And   I go to my dashboard
-    Then  I should see "Current client:"
+    And   my agency has the client "Harvard"
+    And   I go to the home page
 
   @javascript
   Scenario: Creating a new client

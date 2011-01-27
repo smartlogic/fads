@@ -6,8 +6,10 @@ Feature: User cannot create creative outside facebook text limits/requirements
 
   Background: 
     Given I am logged in
+    And   my agency has the client "FaceTime"
     And   I am on the home page
-    And   I follow "Create a new creative"
+    And   I follow "Creatives"
+    And   I follow "Create New"
 
   Scenario: Creating a creative with no title, body, image, or link
     When  I press "Create Creative"

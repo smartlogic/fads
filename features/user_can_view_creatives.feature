@@ -4,13 +4,12 @@ Feature: User can view creatives
   I want to view a list of all of my creatives
 
   Background:
-    Given the existing user:
-      | email                 | test@slsdev.net |
-    And   I am logged in
+    Given I am logged in
+    And   my agency has the client "Stark Enterprises"
+    Given I am on the home page
 
   Scenario: Client has 0 creatives
-    Given I am on the home page
-    And   I follow "Creatives"
+    Given I follow "Creatives"
     Then  I should see "My Creatives"
     And   I should see "You have not uploaded any creatives"
     And   the "View All" subnav should be selected

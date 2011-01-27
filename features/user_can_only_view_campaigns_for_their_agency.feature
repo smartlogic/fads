@@ -5,7 +5,8 @@ Feature: User can only view campaigns for their agency
 
   Scenario:
     Given I am logged in
-    And   my agency has the campaign named "My Awesome Campaign"
+    And   my agency has the client "Jeebus"
+    And   my client has the campaign named "Second Coming"
     And   the agency named "Evil Agency"
     And   the agency named "Evil Agency" has a campaign named "My Terrible Campaign"
     When  I follow "Campaigns"

@@ -3,7 +3,7 @@
   = subnav(:new)
 %p A <em>Creative</em> consists of the copy and image required to display a single ad.
 
-= form_for creative, :html => { :multipart => true } do |f|
+= form_for [client, creative], :html => { :multipart => true } do |f|
   %fieldset
     %legend Creative Information
     .required.field

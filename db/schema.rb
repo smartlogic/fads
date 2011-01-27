@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20110126202409) do
 
   create_table "target_groups", :force => true do |t|
     t.string   "name"
+    t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

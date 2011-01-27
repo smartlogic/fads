@@ -1,5 +1,7 @@
-= link_to 'Create Campaign', new_campaign_path
+- content_for :title, "Campaigns"
+- content_for(:subnav) do
+  = subnav(:all)
 
 %ul
   - campaigns.each do |campaign|
-    %li= link_to campaign.name, campaign_path(campaign)
+    %li= link_to campaign.name, client_campaign_path(client, campaign)

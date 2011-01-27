@@ -14,16 +14,18 @@
             %strong Current client:
           = select_tag 'client_id', client_options_for_user(current_user)
       #navigation
+        - if user_signed_in? && client.id?
+          = link_to 'Dashboard', clients_path
+          = link_to 'Campaigns', client_campaigns_path(client)
+          = link_to 'Target Groups', client_target_groups_path(client)
+          = link_to 'Creatives', client_creatives_path(client)
         - if user_signed_in?
-          %a{ :href => "/" } Dashboard
-          %a{ :href => "/campaigns" } Campaigns
-          %a{ :href => "/creatives" } Creatives
           %a{ :href => "/profile" } Account (<em>yflicker</em>)
           %a= link_to 'Logout', destroy_user_session_path
         - else
           %a= link_to 'Login', new_user_session_path
     #subnav-container
-      %a{ :href => "./" }
+      %a{ :href => root_path }
         %img{ :src => "http://www.smartlogicsolutions.com/images/logo.png", :height => 39, :width => 253, :alt => "FADS Logo" }
       #subnav= yield :subnav
     %h1= yield :title

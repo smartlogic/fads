@@ -1,0 +1,18 @@
+- content_for :title, "Target Groups"
+- content_for(:subnav) do
+  = subnav(:all)
+
+%p A list of all <em>Target Groups</em> available for use in your campaigns.
+
+- if !target_groups.empty?
+  %table{ :id => "target_groups_table" }
+    %tr
+      %th Name
+      %th Actions
+    - target_groups.each do |target_group|
+      %tr
+        %td= target_group.name
+        %td= link_to 'View', client_target_group_path(target_group)
+- else
+  %p You have not created any target groups.
+

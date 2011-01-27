@@ -1,11 +1,10 @@
 - content_for(:title, "Create a New Target Group")
 - content_for(:subnav) do
-  %a{ :href => "/target_group" } View All
+  = link_to 'View All', client_target_groups_path(client)
   %a.selected Create New
-  %a{ :href => "#" } Foo Bar
 %p A <em>Target Group</em> is a set of variables upon which you want to split test data.
 
-= form_for target_group do |f|
+= form_for [client, target_group] do |f|
   %fieldset
     %legend Target Group Criteria
     .required.field

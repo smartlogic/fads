@@ -8,17 +8,17 @@ Feature: User can view creatives
       | email                 | test@slsdev.net |
     And   I am logged in
 
-  Scenario: User has 0 creatives
+  Scenario: Client has 0 creatives
     Given I am on the home page
     And   I follow "Creatives"
     Then  I should see "My Creatives"
     And   I should see "You have not uploaded any creatives"
     And   the "View All" subnav should be selected
 
-  Scenario: User has 2 creatives
-    Given I have a creative:
+  Scenario: Client has 2 creatives
+    Given a creative:
       | name      | My super unique name           |
-    And   I have a creative:
+    And   a creative:
       | name      | My other unique name           |
     And   I follow "Creatives"
     Then  I should see "My Creatives"

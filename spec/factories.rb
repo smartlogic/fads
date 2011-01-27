@@ -2,6 +2,7 @@ Factory.define :user do |f|
   f.sequence(:email) {|n| "FrankieUser_#{n}@slsdev.net"}
   f.password  "password"
   f.password_confirmation "password"
+  f.association :agency
 end
 
 Factory.define :valid_creative, :class => Creative do |f|
@@ -25,3 +26,4 @@ end
 Factory.define :agency do |f|
   f.sequence(:name) {|n| "Agency ##{n}"}
 end
+

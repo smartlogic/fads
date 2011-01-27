@@ -9,7 +9,7 @@ Feature: User can create a client
     And   I go to my dashboard
     Then  I should see "Current client:"
 
-  @wip @javascript
+  @javascript
   Scenario: Creating a new client
     When I select "New Client..." from "client_id"
     And  I fill in "Name" with "XOM"

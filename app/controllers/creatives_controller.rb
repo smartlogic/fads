@@ -3,6 +3,7 @@ class CreativesController < ApplicationController
   before_filter :authenticate_user!
 
   expose :creative
+  expose(:creatives) { Creative.all }
 
   def create
     if creative.save

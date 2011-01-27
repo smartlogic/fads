@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   # TODO: Remove this after we implement agency admin abilities
   after_create :link_to_default_agency
   def link_to_default_agency
-    agency = Agency.first || Agency.create(:name => "Widget Works Marketing")
+    agency = Agency.create(:name => "#{email}-Marketing")
     update_attribute(:agency, Agency.first)
   end
 end

@@ -8,7 +8,7 @@ class CampaignsController < ApplicationController
   def create
     if campaign.save
       flash[:notice] = "Campaign successfully created"
-      redirect_to campaign
+      redirect_to [client, campaign]
     else
       render :new
     end

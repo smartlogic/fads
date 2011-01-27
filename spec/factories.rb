@@ -27,3 +27,7 @@ Factory.define :agency do |f|
   f.sequence(:name) {|n| "Agency ##{n}"}
 end
 
+Factory.define :client do |f|
+  f.sequence(:name) {|n| "Client ##{n}"}
+  f.association :agency
+end

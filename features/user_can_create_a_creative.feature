@@ -5,9 +5,8 @@ Feature: User can create a creative
   I want to upload an creative
 
   Background:
-    Given the existing user:
-      | email                 | test@slsdev.net |
-    And   I am logged in
+    Given I am logged in
+    And   my agency has the client "Morgan Stanley"
 
   Scenario: User creates a creative
     Given I am on the home page

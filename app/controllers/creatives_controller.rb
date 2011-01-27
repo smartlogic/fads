@@ -8,7 +8,7 @@ class CreativesController < ApplicationController
   def create
     if creative.save
       flash[:notice] = "Creative successfully created"
-      redirect_to creative
+      redirect_to [client, creative]
     else
       render :new
     end

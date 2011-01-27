@@ -23,5 +23,5 @@ Feature: User can view creatives
     And   I follow "Creatives"
     Then  I should see "My Creatives"
     And   the "View All" subnav should be selected
-    And   I should see "My super unique name"
-    And   I should see "My other unique name"
+    And   I should see "My super unique name" within "table#creatives_table"
+    And   I should see "My other unique name" within "table#creatives_table"

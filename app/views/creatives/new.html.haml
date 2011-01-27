@@ -1,8 +1,6 @@
 - content_for(:title, "Create a New Creative")
 - content_for(:subnav) do
-  %a{ :href => "#" } View All
-  %a.selected Create New
-  %a{ :href => "#" } View None
+  = subnav(:new)
 %p A <em>Creative</em> consists of the copy and image required to display a single ad.
 
 = form_for creative, :html => { :multipart => true } do |f|

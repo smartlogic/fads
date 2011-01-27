@@ -4,20 +4,21 @@
     %title= "#{yield :title} | FADS"
     = stylesheet_link_tag :all
     = javascript_include_tag :defaults
+    = javascript_include_tag 'jquery'
     = csrf_meta_tag
   %body
     #navigation-container
-      <strong>Current client:</strong>
-      %select
-        %option ExxonMobil
-        %option JP Morgan Chase
-        %option Create New...
+      - if user_signed_in?
+        = form_tag select_clients_path, :id => 'client_select' do
+          %label{:for => 'client_id'}
+            %strong Current client:
+          = select_tag 'client_id', client_options_for_user(current_user)
       #navigation
-        %a{ :href => "/" } Dashboard
-        %a{ :href => "/campaigns" } Campaigns
-        %a{ :href => "/creatives" } Creatives
-        %a{ :href => "/profile" } Account (<em>yflicker</em>)
         - if user_signed_in?
+          %a{ :href => "/" } Dashboard
+          %a{ :href => "/campaigns" } Campaigns
+          %a{ :href => "/creatives" } Creatives
+          %a{ :href => "/profile" } Account (<em>yflicker</em>)
           %a= link_to 'Logout', destroy_user_session_path
         - else
           %a= link_to 'Login', new_user_session_path
@@ -40,3 +41,8 @@
       |
       %a{ :href => "#"} Policy
       |
+
+  :javascript
+    $('select#client_id').change( function() {
+      $('form#client_select').submit();
+    });

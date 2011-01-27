@@ -9,6 +9,7 @@ gem 'decent_exposure'
 gem 'haml'
 gem 'dynamic_form'
 gem 'carrierwave'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'ruby-debug19'
@@ -23,6 +24,7 @@ group :test do
   gem 'capybara'
   gem 'nokogiri'
   gem 'launchy'
+  gem 'database_cleaner'
 
   gem 'ZenTest'
   gem 'autotest-rails'

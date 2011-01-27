@@ -3,10 +3,15 @@ Fads::Application.routes.draw do
 
   match '/dashboard' => 'campaigns#index'
 
+  resources :clients, :only => [:new, :create, :show] do
+    collection do
+      post 'select'
+    end
+  end
+
   resources :campaigns, :only => [:index, :new, :create, :show]
   resources :creatives
   resources :target_groups, :only => [:new, :create, :show]
-  resources :clients, :only => [:new, :create]
 
   root :to => 'home#index'
 

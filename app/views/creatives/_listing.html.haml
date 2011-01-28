@@ -1,0 +1,14 @@
+%table{ :id => "creatives_table" }
+  %tr
+    %th Name
+    %th Title
+    %th Body
+    %th Landing Page
+    %th Image
+  - creatives.each do |creative|
+    %tr
+      %td= creative.name
+      %td= creative.title
+      %td= creative.body
+      %td= creative.link_url
+      %td= image_tag creative.image.url

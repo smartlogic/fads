@@ -1,0 +1,22 @@
+- if !available_creatives.empty?
+  %table{ :id => "creatives_table" }
+    %tr
+      %th Name
+      %th Title
+      %th Body
+      %th Landing Page
+      %th Image
+      %th
+    - available_creatives.each do |creative|
+      %tr
+        %td= creative.name
+        %td= creative.title
+        %td= creative.body
+        %td= creative.link_url
+        %td= image_tag creative.image.url
+        %td
+          = form_tag add_creative_client_campaign_path(client, campaign) do
+            = hidden_field_tag 'creative_id', creative.id
+            = submit_tag 'Add'
+- else
+  %p No creatives available to add to this campaign

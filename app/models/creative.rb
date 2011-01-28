@@ -6,4 +6,7 @@ class Creative < ActiveRecord::Base
   validates :body, :presence => true, :length => {:maximum => 135}
   validates :image, :presence => true
   validates :link_url, :presence => true
+
+  belongs_to :client
+  has_and_belongs_to_many :campaigns
 end

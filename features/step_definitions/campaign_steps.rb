@@ -6,3 +6,8 @@ Given /^the agency named "([^"]*)" has a campaign named "([^"]*)"$/ do |agency_n
   agency = Agency.find_by_name(agency_name)
   agency.campaigns.create(:name => campaign_name)
 end
+
+Given /^my client has the campaign "([^"]*)"$/ do |campaign_name|
+  client = @user.agency.clients.first || Factory(:client, :agency => @user.agency)
+  client.campaigns.create(:name => campaign_name)
+end

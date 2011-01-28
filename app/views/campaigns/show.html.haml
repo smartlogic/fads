@@ -1,0 +1,18 @@
+- content_for :title, campaign.name
+- content_for(:subnav) do
+  = subnav(:show)
+
+%h2 Creatives
+= link_to 'Add existing creative', available_creatives_client_campaign_path(client, campaign), :id => 'add_existing_creative'
+|
+= link_to 'Add new creative', '#'
+
+- if !existing_creatives.empty?
+  = render :partial => 'creatives/listing', :locals => {:creatives => existing_creatives}
+- else
+  %p You haven't yet added any creatives to this campaign
+
+:javascript
+  $('a#add_existing_creative').click(function(){
+    // Show the modal w/ the available creatives in it
+  });

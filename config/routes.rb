@@ -6,7 +6,13 @@ Fads::Application.routes.draw do
       post 'select'
     end
 
-    resources :campaigns, :only => [:index, :new, :create, :show]
+    resources :campaigns, :only => [:index, :new, :create, :show] do
+      member do
+        get 'available_creatives'
+        post 'add_creative'
+      end
+    end
+
     resources :creatives
     resources :target_groups, :only => [:new, :create, :show, :index]
   end

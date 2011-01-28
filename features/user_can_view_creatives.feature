@@ -15,10 +15,8 @@ Feature: User can view creatives
     And   the "View All" subnav should be selected
 
   Scenario: Client has 2 creatives
-    Given a creative:
-      | name      | My super unique name           |
-    And   a creative:
-      | name      | My other unique name           |
+    Given my client has the creative "My super unique name"
+    And   my client has the creative "My other unique name"
     And   I follow "Creatives"
     Then  I should see "My Creatives"
     And   the "View All" subnav should be selected

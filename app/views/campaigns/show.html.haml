@@ -1,4 +1,7 @@
 - content_for :title, campaign.name
+- content_for(:head) do
+  = javascript_include_tag 'jquery-ui'
+
 - content_for(:subnav) do
   = subnav(:show)
 
@@ -12,7 +15,16 @@
 - else
   %p You haven't yet added any creatives to this campaign
 
+#add_creative_modal{:style => 'display:none;background-color:grey;overflow: scroll;'}
+  = render :partial => 'add_creatives_listing', :locals => {:available_creatives => available_creatives}
+
 :javascript
-  $('a#add_existing_creative').click(function(){
-    // Show the modal w/ the available creatives in it
+  $('a#add_existing_creative').click(function(e){
+    e.preventDefault();
+    $('#add_creative_modal').dialog({ buttons: { "Cancel": function() { $(this).dialog("close"); } },
+      resizable: false,
+      height: 600,
+      width: 800,
+      draggable: false
+      });
   });

@@ -19,6 +19,8 @@ end
 group :development do
   gem 'capistrano'
   gem 'rvm'
+  gem 'hpricot'
+  gem 'ruby_parser'
 end
 
 group :test do

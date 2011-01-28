@@ -1,0 +1,23 @@
+- content_for :title, "Sign up"
+- content_for(:subnav) do
+  = subnav(:sign_up)
+
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  %fieldset
+    %legend Sign up
+    .required.field
+      = f.label :email
+      %small= f.error_message_on :email
+      = f.text_field :email
+    .required.field
+      = f.label :password
+      %small= f.error_message_on :password
+      = f.password_field :password
+    .required.field
+      = f.label :password_confirmation
+      %small= f.error_message_on :password_confirmation
+      = f.password_field :password_confirmation
+
+  = f.submit "Sign up"
+
+= render :partial => "devise/shared/links"

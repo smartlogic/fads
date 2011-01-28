@@ -1,2 +1,2 @@
-= link_to 'View All', client_target_groups_path(client), :class => (selected == :all) ? 'selected' : ''
-= link_to 'Create New', new_client_target_group_path(client), :class => (selected == :new) ? 'selected' : ''
+= link_to 'View All', client_target_groups_path(client), :class => subnav_class(:all)
+= link_to 'Create New', new_client_target_group_path(client), :class => subnav_class(:new)

@@ -35,9 +35,7 @@ namespace :custom do
   task :symlink, :roles => :app do
     # always use shared database.yml
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  end
 
-  task :symlink_apache, :roles => :app do
     # always use most recent apache.conf
     run "ln -nfs #{release_path}/config/apache.conf #{shared_path}/config/apache.conf"
   end

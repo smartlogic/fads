@@ -2,6 +2,17 @@
 - content_for(:subnav) do
   = subnav(:all)
 
-%ul
-  - campaigns.each do |campaign|
-    %li= link_to campaign.name, client_campaign_path(client, campaign)
+%p 
+  A list of all <em>Campaigns</em> for 
+  = client.name
+  \.
+
+- if !campaigns.empty?
+  %table#campaigns_table
+    %tr
+      %th Name
+    - campaigns.each do |campaign|
+      %tr
+        %td= link_to campaign.name, client_campaign_path(client, campaign)
+- else
+  %p You have not created any campaigns.

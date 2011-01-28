@@ -24,8 +24,14 @@ task :staging do
 end
 
 namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
+  task :start do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} nohup passenger start -a 127.0.0.1 -p 3000 -d"
+  end
+
+  task :stop do
+    run "cd #{current_path} && passenger stop"
+  end
+
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end

@@ -17,7 +17,9 @@ Feature: User can create a client
     Then I should see "Client successfully created"
 
   Scenario: Creating a new client
-    Given I am on the new client page
-    And  I fill in "Name" with "XOM"
+    When I am on the new client page
+    Then the "Create New" subnav should be selected
+
+    When I fill in "Name" with "XOM"
     And  I press "Create Client"
     Then I should see "Client successfully created"

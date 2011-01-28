@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+if Rails.env.development?
+  agency = Agency.create!(:name => 'Euro')
+  User.create!(:agency => agency, :email => 'user@slsdev.net', :password => 'useruser')
+end

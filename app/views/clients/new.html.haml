@@ -1,5 +1,14 @@
+- content_for(:title, "New Client")
+- content_for(:subnav) do
+  = subnav(:new)
+
+%p A <em>Client</em> is an organization that you are running Facebook campaigns for.
 = form_for client do |f|
-  = f.label :name
-  = f.text_field :name
+  %fieldset
+    %legend Client Information
+    .required.field
+      = f.label :name
+      %small= f.error_message_on :name
+      = f.text_field :name
 
   = f.submit

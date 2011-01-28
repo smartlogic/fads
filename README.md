@@ -1,5 +1,18 @@
 ## Facebook Ads - Facebook Ad generation and reporting
 
+## Staging Environment
+
+URL: http://fads.staging.slsdev.net
+
+Fads staging is running under the deploy user via passenger standalone using RVM 
+for Ruby 1.9.2-p0, gemset 'fads'.
+
+Staging server commands:
+
+    cap staging deploy
+    cap staging start
+    cap staging stop
+
 ## Pickler Setup
 
 Create a file named .tracker.yml in your home directory

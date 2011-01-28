@@ -20,10 +20,10 @@
           = link_to 'Target Groups', client_target_groups_path(client)
           = link_to 'Creatives', client_creatives_path(client)
         - if user_signed_in?
-          %a{ :href => "/profile" } Account (<em>yflicker</em>)
-          %a= link_to 'Logout', destroy_user_session_path
+          = link_to "Account (#{current_user.email})", "/profile"
+          = link_to 'Logout', destroy_user_session_path
         - else
-          %a= link_to 'Login', new_user_session_path
+          = link_to 'Login', new_user_session_path
     #subnav-container
       %a{ :href => root_path }
         %img{ :src => "http://www.smartlogicsolutions.com/images/logo.png", :height => 39, :width => 253, :alt => "FADS Logo" }

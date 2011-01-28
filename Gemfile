@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.3'
 
 gem 'pg'
-gem 'capistrano'
 gem 'devise'
 gem 'decent_exposure'
 gem 'haml'
@@ -15,6 +14,11 @@ group :development, :test do
   gem 'ruby-debug19'
   gem 'pickler'
   gem 'rspec-rails'
+end
+
+group :development do
+  gem 'capistrano'
+  gem 'rvm'
 end
 
 group :test do

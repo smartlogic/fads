@@ -65,6 +65,10 @@ form {
 	width: 40em;
 }
 
+form.hidden {
+  width: auto;
+}
+
 /***** Fieldsets - for containing "sets" of "fields"... *****/
 fieldset {
 	margin: 1em 0px 1.5em 0px;

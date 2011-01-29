@@ -13,9 +13,9 @@
         %td= creative.title
         %td= creative.body
         %td= creative.link_url
-        %td= image_tag creative.image.url
+        %td= image_tag creative.image.url, :width => 110, :height => 80
         %td
-          = form_tag add_creative_client_campaign_path(client, campaign) do
+          = form_tag add_creative_client_campaign_path(client, campaign), :class => 'hidden' do
             = hidden_field_tag 'creative_id', creative.id
             = submit_tag 'Add'
 - else

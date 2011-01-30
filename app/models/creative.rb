@@ -1,5 +1,5 @@
 class Creative < ActiveRecord::Base
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, CreativeUploader
 
   validates :name, :presence => true, :uniqueness => true
   validates :title, :presence => true, :length => {:maximum => 25}

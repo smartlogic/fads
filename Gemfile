@@ -9,6 +9,7 @@ gem 'haml'
 gem 'dynamic_form'
 gem 'carrierwave'
 gem 'jquery-rails'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'ruby-debug19'

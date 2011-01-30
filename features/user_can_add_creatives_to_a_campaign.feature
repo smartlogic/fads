@@ -14,10 +14,8 @@ Feature: User can add creatives to a campaign
   @javascript
   Scenario: Adding an existing creative to a campaign
     When I follow "Super Campaign"
-    Then I should see "Uber Creative" within "table#available_creatives_table"
-
-    When I follow "Add existing creative"
-    And  I press "Add"
+    And  I follow "Add existing creative"
+    And  I press "Add" within ".popup"
     Then I should see "Creative added"
     And  I should see "Uber Creative" within "table#creatives_table"
 

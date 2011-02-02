@@ -81,6 +81,9 @@ GEM
       rake (>= 0.8.7)
     gherkin (2.3.3)
       json (~> 1.4.6)
+    google-spreadsheet-ruby (0.1.2)
+      nokogiri (>= 1.4.3.1)
+      oauth (>= 0.3.6)
     haml (3.0.25)
     highline (1.6.1)
     hpricot (0.8.3)
@@ -111,6 +114,7 @@ GEM
     net-ssh-gateway (1.0.1)
       net-ssh (>= 1.99.1)
     nokogiri (1.4.4)
+    oauth (0.4.4)
     pg (0.10.1)
     pickler (0.1.5)
       activesupport (>= 2.0.0)
@@ -195,6 +199,7 @@ DEPENDENCIES
   devise
   dynamic_form
   factory_girl
+  google-spreadsheet-ruby
   haml
   hpricot
   jquery-rails

@@ -22,6 +22,7 @@ group :development do
   gem 'rvm'
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'google-spreadsheet-ruby'
 end
 
 group :test do

@@ -10,12 +10,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110128191220) do
+ActiveRecord::Schema.define(:version => 20110202174611) do
 
   create_table "agencies", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "campaign_results", :id => false, :force => true do |t|
+    t.string  "gender"
+    t.boolean "likes_l_and_o"
+    t.string  "image"
+    t.string  "copy"
+    t.integer "population"
+    t.decimal "g_cpm_low"
+    t.decimal "g_cpm_mean"
+    t.decimal "g_cpm_high"
+    t.decimal "g_cpc_low"
+    t.decimal "g_cpc_mean"
+    t.decimal "g_cpc_high"
+    t.string  "utm_content"
+    t.decimal "spend"
+    t.integer "impressions"
+    t.decimal "population_reached"
+    t.integer "clicks"
+    t.decimal "click_rate"
+    t.integer "conversions"
+    t.decimal "conversion_rate"
+    t.decimal "value_per_conversion"
+    t.decimal "effective_cpc"
+    t.decimal "effective_cpa"
+    t.decimal "value_created"
+    t.decimal "profit"
+    t.decimal "profit_margin"
   end
 
   create_table "campaigns", :force => true do |t|

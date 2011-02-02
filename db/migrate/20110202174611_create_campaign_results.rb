@@ -6,12 +6,7 @@ class CreateCampaignResults < ActiveRecord::Migration
       t.string  :image
       t.string  :copy
       t.integer :population
-      t.decimal :g_cpm_low
-      t.decimal :g_cpm_mean
-      t.decimal :g_cpm_high
-      t.decimal :g_cpc_low
-      t.decimal :g_cpc_mean
-      t.decimal :g_cpc_high
+      t.decimal :actual_bid
       t.string  :utm_content
       t.decimal :spend
       t.integer :impressions
@@ -21,6 +16,7 @@ class CreateCampaignResults < ActiveRecord::Migration
       t.integer :conversions
       t.decimal :conversion_rate
       t.decimal :value_per_conversion
+      t.decimal :effective_cpm
       t.decimal :effective_cpc
       t.decimal :effective_cpa
       t.decimal :value_created

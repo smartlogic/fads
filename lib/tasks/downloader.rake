@@ -1,3 +1,15 @@
+namespace :fb do
+  task :download do
+    require 'facebooker'
+    Facebooker.new.download
+  end
+
+  task :save => :environment do
+    require 'facebooker'
+    Facebooker.new.save_to_db
+  end
+end
+
 namespace :data do
   task :download => :environment do
     require 'downloader'

@@ -21,15 +21,16 @@ class Facebooker
     trs = doc.css(".adreports_data table.UIDataTable tr")
     trs[3, 16].each do |tr|
       campaign    = tr.children[1].content
-      impressions = tr.children[2].content
-      clicks      = tr.children[5].content
-      spend       = tr.children[11].content
+      impressions = tr.children[2].content.sub(",", "")
+      clicks      = tr.children[5].content.sub(",", "")
+      spend       = tr.children[11].content.sub(",", "")
 
-      CampaignResult.create!(
+      fb_campaign = FacebookCampaign.find_by_name(campaign)
+      fb_campaign.campaign_results.create!(
         :spend => spend,
         :impressions => impressions,
         :clicks => clicks,
-        :spend => spend
+        :conversions => 0
       )
     end
   end

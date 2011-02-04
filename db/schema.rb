@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110204161401) do
+ActiveRecord::Schema.define(:version => 20110204173346) do
 
   create_table "agencies", :force => true do |t|
     t.string   "name"
@@ -19,12 +19,17 @@ ActiveRecord::Schema.define(:version => 20110204161401) do
   end
 
   create_table "campaign_results", :id => false, :force => true do |t|
-    t.decimal  "spend"
-    t.integer  "impressions"
-    t.integer  "clicks"
-    t.integer  "conversions"
-    t.integer  "facebook_campaign_id"
-    t.datetime "timestamp"
+    t.decimal "spend"
+    t.integer "impressions"
+    t.integer "clicks"
+    t.integer "conversions"
+    t.integer "facebook_campaign_id"
+    t.integer "campaign_snapshot_id", :null => false
+  end
+
+  create_table "campaign_snapshots", :force => true do |t|
+    t.integer  "campaign_id", :null => false
+    t.datetime "timestamp",   :null => false
   end
 
   create_table "campaigns", :force => true do |t|
@@ -106,6 +111,8 @@ ActiveRecord::Schema.define(:version => 20110204161401) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  add_foreign_key "campaign_results", "campaign_snapshots", :name => "campaign_results_campaign_snapshot_id_fk"
 
   add_foreign_key "facebook_campaigns", "campaigns", :name => "facebook_campaigns_campaign_id_fk"
 

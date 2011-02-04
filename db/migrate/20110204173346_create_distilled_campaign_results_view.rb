@@ -2,8 +2,8 @@ class CreateDistilledCampaignResultsView < ActiveRecord::Migration
   def self.up
     connection.execute <<-SQL
       CREATE VIEW distilled_campaign_results AS
-        SELECT FBC.name, FBC.gender, FBC.likes_law_and_order, FBC.image, FBC.copy,
-          FBC.population, FBC.bid, CR.spend, CR.impressions, 
+        SELECT FBC.name, CR.campaign_snapshot_id, FBC.gender, FBC.likes_law_and_order, 
+          FBC.image, FBC.copy, FBC.population, FBC.bid, CR.spend, CR.impressions, 
           CAST(CR.impressions AS NUMERIC) / NULLIF(FBC.population, 0) AS population_reached,
           CR.clicks, CAST(CR.clicks AS NUMERIC) / NULLIF(CR.impressions, 0) AS click_rate,
           CR.conversions, CAST(CR.conversions AS NUMERIC) / NULLIF(CR.clicks, 0) AS conversion_rate,

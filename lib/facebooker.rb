@@ -17,6 +17,9 @@ class Facebooker
   end
 
   def save_to_db
+    campaign = Campaign.first # change
+    snapshot = campaign.campaign_snapshots.create!
+
     doc = Nokogiri::HTML(open("tmp/facebook.html"))
     trs = doc.css(".adreports_data table.UIDataTable tr")
     trs[3, 16].each do |tr|
@@ -30,7 +33,8 @@ class Facebooker
         :spend => spend,
         :impressions => impressions,
         :clicks => clicks,
-        :conversions => 0
+        :conversions => 0,
+        :campaign_snapshot => snapshot
       )
     end
   end

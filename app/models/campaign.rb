@@ -3,6 +3,7 @@ class Campaign < ActiveRecord::Base
 
   belongs_to :client
   has_many :facebook_campaigns
+  has_many :campaign_snapshots
 
   has_and_belongs_to_many :creatives
 end

@@ -9,7 +9,7 @@ class CreateCampaignsTable < ActiveRecord::Migration
       t.integer :daily_budget
       t.integer :campaign_status
       t.integer :lifetime_budget
-      t.references :agency
+      t.references :client, :foreign_key => true
 
       t.timestamps
     end

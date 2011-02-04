@@ -79,6 +79,7 @@ GEM
     factory_girl (1.3.3)
     ffi (0.6.3)
       rake (>= 0.8.7)
+    foreigner (0.9.1)
     gherkin (2.3.3)
       json (~> 1.4.6)
     google-spreadsheet-ruby (0.1.2)
@@ -201,6 +202,7 @@ DEPENDENCIES
   devise
   dynamic_form
   factory_girl
+  foreigner
   google-spreadsheet-ruby
   haml
   hpricot

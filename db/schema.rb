@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110202174611) do
+ActiveRecord::Schema.define(:version => 20110204152535) do
 
   create_table "agencies", :force => true do |t|
     t.string   "name"
@@ -51,10 +51,9 @@ ActiveRecord::Schema.define(:version => 20110202174611) do
     t.integer  "daily_budget"
     t.integer  "campaign_status"
     t.integer  "lifetime_budget"
-    t.integer  "agency_id"
+    t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "client_id"
   end
 
   create_table "campaigns_creatives", :id => false, :force => true do |t|
@@ -84,6 +83,15 @@ ActiveRecord::Schema.define(:version => 20110202174611) do
     t.integer  "client_id"
   end
 
+  create_table "facebook_campaigns", :force => true do |t|
+    t.string  "name",                :null => false
+    t.string  "image"
+    t.string  "copy"
+    t.string  "gender"
+    t.boolean "likes_law_and_order"
+    t.integer "campaign_id",         :null => false
+  end
+
   create_table "target_groups", :force => true do |t|
     t.string   "name"
     t.integer  "client_id"
@@ -110,5 +118,7 @@ ActiveRecord::Schema.define(:version => 20110202174611) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  add_foreign_key "facebook_campaigns", "campaigns", :name => "facebook_campaigns_campaign_id_fk"
 
 end

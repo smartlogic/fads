@@ -8,6 +8,9 @@ class CreateFacebookCampaigns < ActiveRecord::Migration
       t.boolean   :likes_law_and_order
       t.string    :image
       t.string    :copy
+      t.integer   :population
+      t.decimal   :bid
+      t.decimal   :value_per_conversion
       t.integer   :campaign_id, :null => false
     end
     add_foreign_key :facebook_campaigns, :campaigns

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110204152535) do
+ActiveRecord::Schema.define(:version => 20110204161401) do
 
   create_table "agencies", :force => true do |t|
     t.string   "name"
@@ -19,27 +19,12 @@ ActiveRecord::Schema.define(:version => 20110204152535) do
   end
 
   create_table "campaign_results", :id => false, :force => true do |t|
-    t.string  "gender"
-    t.boolean "likes_l_and_o"
-    t.string  "image"
-    t.string  "copy"
-    t.integer "population"
-    t.decimal "actual_bid"
-    t.string  "utm_content"
-    t.decimal "spend"
-    t.integer "impressions"
-    t.decimal "population_reached"
-    t.integer "clicks"
-    t.decimal "click_rate"
-    t.integer "conversions"
-    t.decimal "conversion_rate"
-    t.decimal "value_per_conversion"
-    t.decimal "effective_cpm"
-    t.decimal "effective_cpc"
-    t.decimal "effective_cpa"
-    t.decimal "value_created"
-    t.decimal "profit"
-    t.decimal "profit_margin"
+    t.decimal  "spend"
+    t.integer  "impressions"
+    t.integer  "clicks"
+    t.integer  "conversions"
+    t.integer  "facebook_campaign_id"
+    t.datetime "timestamp"
   end
 
   create_table "campaigns", :force => true do |t|
@@ -84,12 +69,15 @@ ActiveRecord::Schema.define(:version => 20110204152535) do
   end
 
   create_table "facebook_campaigns", :force => true do |t|
-    t.string  "name",                :null => false
+    t.string  "name",                 :null => false
     t.string  "image"
     t.string  "copy"
     t.string  "gender"
     t.boolean "likes_law_and_order"
-    t.integer "campaign_id",         :null => false
+    t.integer "population"
+    t.decimal "bid"
+    t.decimal "value_per_conversion"
+    t.integer "campaign_id",          :null => false
   end
 
   create_table "target_groups", :force => true do |t|

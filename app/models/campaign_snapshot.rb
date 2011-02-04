@@ -6,6 +6,6 @@ class CampaignSnapshot < ActiveRecord::Base
 
   private
   def record_timestamp
-    write_attribute :timestamp, Time.now
+    write_attribute :timestamp, Time.now if timestamp.blank?
   end
 end

@@ -27,4 +27,5 @@ class CampaignsController < ApplicationController
     end
     redirect_to [client, campaign]
   end
+
 end

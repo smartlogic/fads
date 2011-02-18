@@ -11,6 +11,8 @@ Fads::Application.routes.draw do
         get 'available_creatives'
         post 'add_creative'
       end
+
+      resources :campaign_snapshots, :only => [:index, :show]
     end
 
     resources :creatives

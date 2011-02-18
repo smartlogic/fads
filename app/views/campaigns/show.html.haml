@@ -5,6 +5,10 @@
 - content_for(:subnav) do
   = subnav(:show)
 
+= link_to 'Campaign Snapshots', client_campaign_campaign_snapshots_path(client, campaign)
+%br
+%br
+
 %h2 Creatives
 = link_to 'Add existing creative', available_creatives_client_campaign_path(client, campaign), :id => 'add_existing_creative', :rel => 'facebox'
 |

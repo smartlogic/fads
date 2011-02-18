@@ -1,0 +1,19 @@
+- content_for :title, "Campaign Snapshots"
+- content_for(:subnav) do
+  = subnav(:all)
+
+%p 
+  A list of all <em>Campaign Snapshots</em> for 
+  = campaign.name
+  \.
+
+- if !campaign_snapshots.empty?
+  %table#campaign_snapshots_table
+    %tr
+      %th Date
+    - campaign_snapshots.each do |campaign_snapshot|
+      %tr
+        %td= link_to campaign_snapshot.timestamp.strftime('%d/%m/%Y %l:%M'), client_campaign_campaign_snapshot_path(client, campaign, campaign_snapshot)
+- else
+  %p You have not created any campaign snapshots.
+

@@ -1,0 +1,18 @@
+- content_for :title, "Facebook Campaigns"
+- content_for(:subnav) do
+  = subnav(:all)
+
+%p 
+  A list of all <em>Facebook Campaigns</em> for 
+  = campaign.name
+  \.
+
+- if !facebook_campaigns.empty?
+  %table#facebook_campaigns_table
+    %tr
+      %th Name
+    - facebook_campaigns.each do |facebook_campaign|
+      %tr
+        %td= link_to facebook_campaign.name, client_campaign_facebook_campaign_path(client, campaign, facebook_campaign)
+- else
+  %p You have not created any Facebook campaigns

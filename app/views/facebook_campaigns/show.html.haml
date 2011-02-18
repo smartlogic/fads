@@ -1,0 +1,22 @@
+- content_for :title, facebook_campaign.name
+- content_for :head do
+  = javascript_include_tag 'highcharts/highcharts'
+- content_for(:subnav) do
+  = subnav(:show)
+
+#cpc-chart-container
+
+:javascript
+  var cpc_chart;
+  $(document).ready(function(){
+    cpc_cahrt = new Highcharts.Chart({
+      chart: {renderTo: 'cpc-chart-container', type: 'line'},
+      title: {text: 'CPC vs Changein CPC'},
+      xAxis: { categories: #{facebook_campaign.campaign_snapshots.map{|x| x.timestamp.strftime('%d/%m/%Y')}}},
+      yAxis: {title: {text: 'CPC'}},
+      series: [
+        {name: 'Cumulative', data: #{facebook_campaign.campaign_results.map(&:cpc).to_json}},
+        {name: 'Temporal', data: #{facebook_campaign.temporal_cpc.to_json}}
+      ]
+    });
+  });

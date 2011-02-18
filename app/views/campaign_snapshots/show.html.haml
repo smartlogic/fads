@@ -1,0 +1,28 @@
+- content_for :title, "Campaign Snapshot: #{campaign_snapshot.timestamp.strftime('%d/%m/%Y %l:%M')}"
+- content_for :head do
+  = javascript_include_tag 'highcharts/highcharts'
+- content_for(:subnav) do
+  = subnav(:all)
+
+#cumulative-cpc-chart-container
+
+:javascript
+  var cumulative_cpc;
+  $(document).ready(function(){
+    cumulative_cpc = new Highcharts.Chart({
+      chart: {renderTo: 'cumulative-cpc-chart-container', type: 'column'},
+      legend: { enabled: false},
+      title: {text: 'CPC vs Facebook Campaign'},
+      xAxis: {
+        title: {text: 'Facebook Campaign'},
+        categories: #{campaign_snapshot.campaign_results.map(&:facebook_campaign_id).to_json}
+      },
+      yAxis: {title: {text: 'CPC'}},
+      series: [{data: #{campaign_snapshot.campaign_results.map(&:cpc).to_json}}],
+      tooltip: {
+         formatter: function() {
+            return 'Facebook Campaign: ' + this.x;
+         }
+      },      
+    });
+  });
